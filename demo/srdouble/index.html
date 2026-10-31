@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sr.Double – пицца и пиццетта с доставкой</title>
+<meta name="description" content="Sr.Double – римская и классическая пицца с доставкой по Дмитровскому району. Пицца из двух половинок, -10% на самовывоз.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@800;900&family=Nunito:wght@400;500;600;700;800&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Десктоп: 1 единица --m = 1 px макета (макет 887 px шириной) */
+:root{
+  --m: calc(min(100vw, 1600px) / 887);
+  --cream:#FDF9EE; --ink:#141414; --grey:#6f6a63; --line:#E9E1D3;
+  --red:#D83629; --red-d:#B92A1F; --green:#1E5631; --green-d:#16432A; --mint:#E3E7CC;
+  --head:'Fira Sans', 'Arial Black', sans-serif;
+  --body:'Nunito', system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--body);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+img{display:block;max-width:100%}
+.page{max-width:1600px;margin:0 auto;position:relative}
+.u{width:calc(var(--s) * var(--m))}
+svg{flex:none}
+
+/* ---------- Шапка ---------- */
+.top{position:relative;height:calc(518 * var(--m))}
+.hero-img{position:absolute;left:0;top:calc(62 * var(--m));width:100%;height:calc(456 * var(--m));object-fit:cover}
+.hdr{position:absolute;inset:0 0 auto 0;height:calc(98 * var(--m));display:flex;align-items:center;padding:0 calc(26 * var(--m)) 0 calc(40 * var(--m));z-index:5}
+.logo img{width:calc(105 * var(--m));height:auto}
+.loc{display:flex;align-items:center;gap:calc(6 * var(--m));margin-left:calc(23 * var(--m));margin-top:calc(8 * var(--m));font-size:calc(10 * var(--m));color:#8b847b;font-weight:500}
+.loc svg{width:calc(11 * var(--m));height:calc(11 * var(--m))}
+.nav{display:flex;gap:calc(29 * var(--m));margin-left:calc(68 * var(--m));margin-top:calc(8 * var(--m));font-size:calc(11.4 * var(--m));font-weight:600}
+.nav a:hover{color:var(--red)}
+.phone{display:flex;align-items:center;gap:calc(7 * var(--m));margin-left:auto;margin-top:calc(-8 * var(--m));font-size:calc(11 * var(--m));font-weight:600}
+.phone svg{width:calc(11 * var(--m));height:calc(11 * var(--m))}
+.cart{display:flex;align-items:center;justify-content:center;gap:calc(7 * var(--m));margin-left:calc(17 * var(--m));margin-top:calc(-8 * var(--m));width:calc(111 * var(--m));height:calc(34 * var(--m));border-radius:calc(10 * var(--m));background:var(--red);color:#fff;font-size:calc(10.5 * var(--m));font-weight:700;box-shadow:0 calc(3 * var(--m)) calc(8 * var(--m)) rgba(216,54,41,.25);transition:background .2s, transform .2s}
+.cart:hover{background:var(--red-d)}
+.cart svg{width:calc(12 * var(--m));height:calc(12 * var(--m))}
+.cart.bump{transform:scale(1.08)}
+
+/* ---------- Первый экран ---------- */
+.hero-copy{position:absolute;left:calc(40 * var(--m));top:calc(141 * var(--m));z-index:2}
+.tag{font-size:calc(11.4 * var(--m));font-weight:800;letter-spacing:.16em;color:var(--red);text-transform:uppercase}
+.h1{font-family:var(--head);font-weight:900;font-size:calc(65 * var(--m));line-height:.9;letter-spacing:-.01em;margin-top:calc(17 * var(--m))}
+.h1 .r{color:var(--red)}
+.lead{font-size:calc(14 * var(--m));font-weight:500;margin-top:calc(13 * var(--m))}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:calc(12 * var(--m));border-radius:calc(8 * var(--m));font-weight:800;color:#fff;transition:background .2s, transform .15s}
+.btn:active{transform:translateY(1px)}
+.btn svg{width:calc(14 * var(--m));height:calc(14 * var(--m))}
+.btn-red{background:var(--red);box-shadow:0 calc(4 * var(--m)) calc(10 * var(--m)) rgba(216,54,41,.22)}
+.btn-red:hover{background:var(--red-d)}
+.hero-btn{margin-top:calc(19 * var(--m));width:calc(193 * var(--m));height:calc(42 * var(--m));font-size:calc(14 * var(--m))}
+.note{position:absolute;left:calc(760 * var(--m));top:calc(176 * var(--m));font-family:'Caveat',cursive;font-size:calc(19.5 * var(--m));line-height:1.02;transform:rotate(-15deg);transform-origin:left top;color:#222;z-index:2}
+.note svg{position:absolute;left:calc(46 * var(--m));top:calc(52 * var(--m));width:calc(26 * var(--m));height:calc(36 * var(--m));transform:rotate(17deg)}
+
+/* ---------- Меню ---------- */
+.menu{padding:calc(18 * var(--m)) calc(37 * var(--m)) 0 calc(39 * var(--m))}
+.menu-head{display:flex;align-items:flex-end;justify-content:space-between}
+.h2{font-family:var(--head);font-weight:900;font-size:calc(43 * var(--m));line-height:1;letter-spacing:-.01em}
+.all{display:flex;align-items:center;gap:calc(8 * var(--m));color:var(--red-d);font-weight:800;font-size:calc(11 * var(--m));margin-bottom:calc(7 * var(--m))}
+.all svg{width:calc(12 * var(--m));height:calc(12 * var(--m))}
+.tabs{display:flex;gap:calc(12 * var(--m));margin-top:calc(14 * var(--m))}
+.tab{height:calc(32 * var(--m));padding:0 calc(26 * var(--m));min-width:calc(96 * var(--m));border-radius:calc(7 * var(--m));border:1px solid var(--line);background:#FFFCF6;font-size:calc(11 * var(--m));font-weight:700;transition:background .2s,color .2s}
+.tab:nth-child(2){min-width:calc(138 * var(--m))}
+.tab:nth-child(3){min-width:calc(99 * var(--m))}
+.tab:nth-child(4){min-width:calc(103 * var(--m))}
+.tab:hover{border-color:#d9cdb8}
+.tab.on{background:var(--red);border-color:var(--red);color:#fff;box-shadow:0 calc(3 * var(--m)) calc(8 * var(--m)) rgba(216,54,41,.2)}
+.grid{display:grid;grid-template-columns:repeat(4, calc(186 * var(--m)));column-gap:calc(26 * var(--m));margin-top:calc(16 * var(--m));min-height:calc(320 * var(--m))}
+.card-img{max-width:none;width:calc(200 * var(--m));height:calc(200 * var(--m));margin-left:calc(-10 * var(--m));filter:drop-shadow(0 calc(6 * var(--m)) calc(8 * var(--m)) rgba(80,50,20,.16));transition:transform .4s}
+.card:hover .card-img{transform:rotate(12deg) scale(1.02)}
+.card h3{font-size:calc(15.4 * var(--m));font-weight:800;margin-top:calc(5 * var(--m));letter-spacing:-.005em}
+.card p{font-size:calc(11.2 * var(--m));line-height:1.35;color:var(--grey);margin-top:calc(5 * var(--m));min-height:calc(30 * var(--m));max-width:calc(140 * var(--m))}
+.card .size{font-size:calc(11 * var(--m));color:var(--grey);margin-top:calc(8 * var(--m))}
+.buy{display:flex;align-items:center;justify-content:space-between;margin-top:calc(-4 * var(--m))}
+.price{font-size:calc(18 * var(--m));font-weight:800;margin-top:calc(14 * var(--m))}
+.pick{width:calc(88 * var(--m));height:calc(33 * var(--m));border:calc(1.4 * var(--m)) solid var(--red);border-radius:calc(8 * var(--m));color:var(--red-d);font-weight:800;font-size:calc(11 * var(--m));transition:background .2s,color .2s}
+.pick:hover{background:var(--red);color:#fff}
+.pick.added{background:var(--green);border-color:var(--green);color:#fff}
+.empty{grid-column:1 / -1;align-self:center;text-align:center;color:var(--grey);font-size:calc(13 * var(--m))}
+.empty b{display:block;font-family:var(--head);font-size:calc(24 * var(--m));color:var(--ink);margin-bottom:calc(6 * var(--m))}
+
+/* ---------- Промо ---------- */
+.promo{display:grid;grid-template-columns:calc(571 * var(--m)) calc(264 * var(--m));gap:calc(13 * var(--m));padding:0 calc(19 * var(--m)) 0 calc(20 * var(--m));margin-top:calc(27 * var(--m))}
+.pcard{position:relative;height:calc(324 * var(--m));border-radius:calc(9 * var(--m));overflow:hidden}
+.halves{background:var(--mint)}
+.halves img{position:absolute;right:0;top:0;width:calc(352 * var(--m));height:calc(324 * var(--m));-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 10%);mask-image:linear-gradient(90deg,transparent 0,#000 10%)}
+.halves .in{position:relative;z-index:1;padding:calc(37 * var(--m)) 0 0 calc(26 * var(--m))}
+.h3{font-family:var(--head);font-weight:900;font-size:calc(39 * var(--m));line-height:1.05;letter-spacing:-.01em}
+.h3 .r{color:var(--red)}
+.halves p{font-size:calc(15 * var(--m));line-height:1.33;margin-top:calc(19 * var(--m));font-weight:500}
+.btn-green{background:var(--green);margin-top:calc(23 * var(--m));width:calc(189 * var(--m));height:calc(43 * var(--m));font-size:calc(14 * var(--m))}
+.btn-green:hover{background:var(--green-d)}
+.road{background:linear-gradient(180deg,#D93729 0%,#D53527 55%,#C8301F 100%);color:#fff}
+.boxwrap{position:absolute;inset:0;container-type:inline-size}
+.road img{width:100%;height:100%;object-fit:cover;object-position:100% 100%}
+.road .in{position:relative;z-index:1;padding:calc(17 * var(--m)) 0 0 calc(24 * var(--m))}
+.road .h3{font-size:calc(49 * var(--m));line-height:.93}
+.road p{font-size:calc(14 * var(--m));margin-top:calc(12 * var(--m));opacity:.95}
+.sticker{position:absolute;z-index:2;left:9%;top:43.5%;width:49%;height:22.5%;border-radius:4.2cqw;background:#FBEFDC;color:var(--ink);transform:rotate(-6deg);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 calc(4 * var(--m)) calc(10 * var(--m)) rgba(90,20,10,.25)}
+.sticker b{font-family:var(--head);font-weight:900;font-size:10.2cqw;line-height:1;letter-spacing:-.03em}
+.sticker span{font-size:4.7cqw;font-weight:800;color:var(--red-d);margin-top:.3cqw}
+
+/* ---------- Доставка ---------- */
+.deliv{position:relative;height:calc(338 * var(--m));margin-top:calc(16 * var(--m))}
+.deliv img{position:absolute;right:0;top:0;width:calc(462 * var(--m));height:100%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 9%);mask-image:linear-gradient(90deg,transparent 0,#000 9%)}
+.deliv .in{position:relative;z-index:1;padding:calc(30 * var(--m)) 0 0 calc(40 * var(--m))}
+.deliv .h2{font-size:calc(44 * var(--m));line-height:1.02}
+.deliv .h2 .r{color:var(--red)}
+.deliv p{font-size:calc(14.6 * var(--m));line-height:1.36;margin-top:calc(19 * var(--m));font-weight:500}
+.check{display:flex;gap:calc(6 * var(--m));margin-top:calc(23 * var(--m))}
+.field{display:flex;align-items:center;gap:calc(10 * var(--m));width:calc(225 * var(--m));height:calc(48 * var(--m));padding:0 calc(14 * var(--m)) 0 calc(17 * var(--m));background:#fff;border:1px solid #E4DCCD;border-radius:calc(8 * var(--m))}
+.field svg{width:calc(13 * var(--m));height:calc(13 * var(--m));color:#4a4a4a}
+.field input{border:0;outline:0;background:none;width:100%;font-size:calc(11.5 * var(--m))}
+.field input::placeholder{color:#7d776f}
+.field:focus-within{border-color:var(--red)}
+.check .btn{width:calc(154 * var(--m));height:calc(48 * var(--m));font-size:calc(13 * var(--m));font-weight:700}
+.res{position:absolute;font-size:calc(11 * var(--m));font-weight:700;margin-top:calc(3 * var(--m));color:var(--green)}
+.res.bad{color:var(--red-d)}
+.pickup{display:flex;align-items:center;gap:calc(10 * var(--m));font-size:calc(11.6 * var(--m));font-weight:500;margin-top:calc(19 * var(--m));margin-left:calc(2 * var(--m))}
+.pickup svg{width:calc(17 * var(--m));height:calc(17 * var(--m))}
+
+/* ---------- Подвал ---------- */
+.ftr{padding:calc(0 * var(--m)) calc(42 * var(--m)) calc(16 * var(--m)) calc(40 * var(--m))}
+.frow{display:flex;align-items:center;height:calc(72 * var(--m))}
+.frow .logo img{width:calc(97 * var(--m))}
+.fnav{display:flex;gap:calc(31 * var(--m));margin-left:calc(44 * var(--m));margin-top:calc(8 * var(--m));font-size:calc(12 * var(--m));font-weight:500}
+.fnav a:hover,.flink:hover{color:var(--red)}
+.flink{display:flex;align-items:center;gap:calc(9 * var(--m));font-size:calc(12 * var(--m));font-weight:500;margin-top:calc(8 * var(--m))}
+.flink svg{width:calc(12 * var(--m));height:calc(12 * var(--m))}
+.flink.ph{margin-left:auto}
+.flink.web{margin-left:calc(54 * var(--m))}
+.fbot{display:flex;justify-content:space-between;border-top:1px solid #E7DFD1;margin-left:calc(120 * var(--m));padding-top:calc(10 * var(--m));font-size:calc(8.6 * var(--m));color:#9a948b}
+.fbot span:first-child{margin-left:calc(-120 * var(--m))}
+
+/* ---------- Корзина-тост ---------- */
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,40px);opacity:0;visibility:hidden;background:var(--ink);color:#fff;padding:14px 20px;border-radius:12px;font-weight:700;font-size:15px;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .35s cubic-bezier(.2,.9,.3,1.2),opacity .25s,visibility .25s;z-index:50;white-space:nowrap}
+.toast.show{transform:translate(-50%,0);opacity:1;visibility:visible}
+.mbar{display:none}
+
+/* ---------- Планшет и телефон ---------- */
+@media (max-width: 960px){
+  :root{--m:1px}
+  .top{height:auto;display:flex;flex-direction:column}
+  .hdr{order:0}.hero-copy{order:1}.hero-img{order:2}.note{order:3}
+  .hdr{position:sticky;top:0;height:64px;padding:0 16px;background:rgba(253,249,238,.94);backdrop-filter:blur(8px);inset:auto}
+  .logo img{width:78px}
+  .loc,.nav,.cart span.t{display:none}
+  .phone{margin:0 0 0 auto;font-size:14px;gap:6px}
+  .phone svg{width:14px;height:14px}
+  .cart{margin:0 0 0 12px;width:auto;height:40px;padding:0 14px;font-size:14px;border-radius:10px}
+  .cart svg{width:16px;height:16px}
+  .hero-copy{position:relative;left:auto;top:auto;padding:22px 16px 0}
+  .tag{font-size:12px}
+  .h1{font-size:clamp(42px, 12.4vw, 66px);margin-top:12px}
+  .lead{font-size:16px;margin-top:14px}
+  .btn svg{width:16px;height:16px}
+  .hero-btn{width:auto;height:54px;padding:0 26px;font-size:16px;margin-top:18px}
+  .hero-img{position:relative;top:auto;width:100%;height:auto;aspect-ratio:1.2;object-fit:cover;object-position:80% 100%;margin-top:4px}
+  .note{left:auto;right:12px;top:auto;bottom:calc(100vw / 1.2 * .58);font-size:19px;transform:rotate(-12deg)}
+  .note svg{left:44px;top:52px;width:26px;height:36px}
+  .menu{padding:36px 16px 0}
+  .h2{font-size:clamp(28px, 8.4vw, 40px)}
+  .all{white-space:nowrap;margin-left:12px}
+  .all{font-size:14px;gap:6px}
+  .all svg{width:14px;height:14px}
+  .tabs{overflow-x:auto;margin:16px -16px 0;padding:0 16px 4px;gap:8px;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{height:40px;font-size:14px;padding:0 18px;min-width:auto!important;white-space:nowrap;border-radius:9px}
+  .grid{grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));gap:28px 14px;margin-top:20px;min-height:0}
+  .card-img{width:100%;height:auto;aspect-ratio:1;margin:0}
+  .card h3{font-size:16px;margin-top:10px}
+  .card p{font-size:13px;min-height:36px;max-width:none}
+  .card .size{font-size:13px;margin-top:6px}
+  .buy{margin-top:2px;gap:6px}
+  .price{font-size:19px;margin-top:0}
+  .pick{width:auto;padding:0 12px;height:38px;font-size:13px;border-width:1.5px}
+  .empty{font-size:15px;padding:30px 0}
+  .empty b{font-size:24px}
+  .promo{grid-template-columns:1fr;padding:0 12px;margin-top:40px;gap:12px}
+  .pcard{height:auto;border-radius:16px}
+  .halves{display:flex;flex-direction:column}
+  .halves .in{order:-1;padding:28px 20px 0}
+  .h3{font-size:34px}
+  .halves p{font-size:16px;margin-top:14px}
+  .btn-green{width:auto;height:52px;padding:0 24px;font-size:16px;margin-top:18px}
+  .halves img{position:relative;width:88%;max-width:460px;height:auto;margin:-10px 0 0 auto}
+  .road{aspect-ratio:1344/1800;max-height:720px}
+  .road .in{padding:26px 20px 0}
+  .road .h3{font-size:42px}
+  .road p{font-size:16px;margin-top:10px}
+  .deliv{height:auto;margin-top:40px;display:flex;flex-direction:column}
+  .deliv .in{order:-1;padding:0 16px}
+  .deliv .h2{font-size:34px}
+  .deliv p{font-size:16px;margin-top:14px}
+  .check{flex-direction:column;gap:8px;margin-top:18px}
+  .field{width:100%;height:54px;padding:0 14px;gap:10px;border-radius:10px}
+  .field svg{width:16px;height:16px}
+  .field input{font-size:16px}
+  .check .btn{width:100%;height:54px;font-size:16px;border-radius:10px}
+  .res{position:static;font-size:14px;margin-top:8px;min-height:18px}
+  .pickup{font-size:14px;gap:10px;margin-top:4px}
+  .pickup svg{width:20px;height:20px}
+  .deliv img{position:relative;width:100%;height:auto;margin-top:14px;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 14%);mask-image:linear-gradient(180deg,transparent 0,#000 14%)}
+  .ftr{padding:24px 16px 96px}
+  .frow{flex-wrap:wrap;height:auto;gap:16px 24px}
+  .frow .logo img{width:84px}
+  .fnav{margin:0;gap:20px;font-size:15px;order:3;width:100%}
+  .flink{font-size:15px;margin:0;gap:8px}
+  .flink svg{width:15px;height:15px}
+  .flink.ph{margin-left:auto}
+  .flink.web{display:none}
+  .fbot{margin:18px 0 0;padding-top:12px;font-size:12px;flex-direction:column;gap:4px}
+  .fbot span:first-child{margin:0}
+  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;gap:8px;z-index:40}
+  .mbar a{flex:1;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:16px;box-shadow:0 8px 24px rgba(60,30,10,.22)}
+  .mbar .call{background:#fff;color:var(--ink)}
+  .mbar .order{background:var(--red);color:#fff}
+  .mbar svg{width:18px;height:18px}
+  .toast{bottom:80px}
+}
+@media (max-width: 380px){
+  .phone span{display:none}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12Z" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="2.2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 2.5c.6-.3 1.3-.1 1.6.5l1.9 3.6c.3.6.2 1.2-.3 1.7L8.3 9.8c1.2 2.5 3.4 4.7 5.9 5.9l1.5-1.5c.5-.5 1.1-.6 1.7-.3l3.6 1.9c.6.3.8 1 .5 1.6l-1.1 2.3c-.4.9-1.4 1.4-2.4 1.2C10.5 19.5 4.5 13.5 3.1 6c-.2-1 .3-2 1.2-2.4l2.3-1.1Z" fill="currentColor"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><path d="M2.5 3.5h2.6l2.4 11.2h10.9l2.1-8H6.3" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="19.5" r="1.6" fill="currentColor"/><circle cx="17" cy="19.5" r="1.6" fill="currentColor"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M3.5 9.5 5 4h14l1.5 5.5M3.5 9.5h17M3.5 9.5c0 1.4 1.1 2.5 2.6 2.5 1.4 0 2.6-1.1 2.6-2.5 0 1.4 1.1 2.5 2.6 2.5s2.6-1.1 2.6-2.5c0 1.4 1.1 2.5 2.6 2.5 1.4 0 2.6-1.1 2.6-2.5M5 12v8h14v-8M10 20v-4.5h4V20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c2.5 2.7 3.6 5.7 3.6 9s-1.1 6.3-3.6 9c-2.5-2.7-3.6-5.7-3.6-9S9.5 5.7 12 3Z" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+</svg>
+
+<div class="page">
+  <div class="top">
+    <header class="hdr">
+      <a class="logo" href="#" aria-label="Sr.Double – на главную"><img src="assets_v2/logo.png" alt="Sr.Double pizza-pizzetta" width="642" height="389"></a>
+      <div class="loc"><svg style="color:var(--red)"><use href="#i-pin"/></svg>Дмитровский район</div>
+      <nav class="nav"><a href="#menu">Меню</a><a href="#halves">Две половинки</a><a href="#delivery">Доставка</a></nav>
+      <a class="phone" href="tel:+74994993108"><svg style="color:var(--red)"><use href="#i-phone"/></svg><span>+7 (499) 499-31-08</span></a>
+      <button class="cart" id="cartBtn" type="button"><svg><use href="#i-cart"/></svg><span><span class="t">Корзина · </span><b id="cartCount">0</b></span></button>
+    </header>
+
+    <img class="hero-img" src="assets_v2/hero.webp" alt="Волчонок Sr.Double обнимает большую пиццу" width="2752" height="1404">
+    <section class="hero-copy">
+      <div class="tag">Пицца и пиццетта</div>
+      <h1 class="h1">Вкусно так,<br>что не<br><span class="r">поделиться.</span></h1>
+      <p class="lead">Римская и классическая пицца с доставкой.</p>
+      <a class="btn btn-red hero-btn" href="#menu">Выбрать пиццу <svg><use href="#i-arrow"/></svg></a>
+    </section>
+    <div class="note" aria-hidden="true">Ладно,<br>кусочек тебе!
+      <svg viewBox="0 0 26 36"><path d="M16 2c4 8 3 20-9 29" fill="none" stroke="#222" stroke-width="1.6" stroke-linecap="round"/><path d="M5.5 24.5 6.5 31.5l6.5-1.8" fill="none" stroke="#222" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </div>
+
+  <section class="menu" id="menu">
+    <div class="menu-head">
+      <h2 class="h2">Сегодня хочется...</h2>
+      <a class="all" href="#menu">Всё меню <svg><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="tabs" role="tablist">
+      <button class="tab on" data-cat="pizza" role="tab" aria-selected="true">Пицца</button>
+      <button class="tab" data-cat="roman" role="tab">Римская пицца</button>
+      <button class="tab" data-cat="snacks" role="tab">Закуски</button>
+      <button class="tab" data-cat="drinks" role="tab">Напитки</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="promo" id="halves">
+    <div class="pcard halves">
+      <img src="assets_v2/promo_halves.webp" alt="Пицца из двух половинок: пепперони и грибы с оливками" width="1408" height="1296" loading="lazy">
+      <div class="in">
+        <h2 class="h3">Две половинки.<br><span class="r">Один идеальный<br>вечер.</span></h2>
+        <p>Соберите пиццу из двух<br>любимых вкусов.</p>
+        <a class="btn btn-green" href="#menu">Собрать свою <svg><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+    <div class="pcard road">
+      <div class="in">
+        <h2 class="h3">По пути<br>домой.</h2>
+        <p>Заберите заказ сами.</p>
+      </div>
+      <div class="boxwrap">
+        <img src="assets_v2/promo_box.webp" alt="Коробка Sr.Double с базиликом" width="1344" height="1800" loading="lazy">
+        <div class="sticker"><b>-10%</b><span>на самовывоз</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="deliv" id="delivery">
+    <img src="assets_v2/delivery.webp" alt="Пицца в коробке и термосумка Sr.Double" width="1848" height="1346" loading="lazy">
+    <div class="in">
+      <h2 class="h2">Горячая пицца.<br><span class="r">У вашего порога.</span></h2>
+      <p>Доставляем по Дмитровскому району.<br>Проверьте адрес и условия доставки.</p>
+      <form class="check" id="checkForm" autocomplete="off">
+        <label class="field"><svg><use href="#i-pin"/></svg><input id="addr" type="text" placeholder="Улица и дом" aria-label="Улица и дом"></label>
+        <button class="btn btn-red" type="submit">Проверить адрес</button>
+      </form>
+      <div class="res" id="res" aria-live="polite"></div>
+      <div class="pickup"><svg><use href="#i-store"/></svg>Самовывоз: село Игнатово, 122</div>
+    </div>
+  </section>
+
+  <footer class="ftr" id="contacts">
+    <div class="frow">
+      <a class="logo" href="#"><img src="assets_v2/logo.png" alt="Sr.Double" width="642" height="389" loading="lazy"></a>
+      <nav class="fnav"><a href="#menu">Меню</a><a href="#delivery">Доставка</a><a href="#contacts">Контакты</a></nav>
+      <a class="flink ph" href="tel:+74994993108"><svg style="color:var(--red)"><use href="#i-phone"/></svg>+7 (499) 499-31-08</a>
+      <a class="flink web" href="https://double-pizza.ru"><svg style="color:var(--red)"><use href="#i-globe"/></svg>double-pizza.ru</a>
+    </div>
+    <div class="fbot"><span>© 2026 Sr.Double. Пицца и пиццетта с доставкой по Дмитровскому району.</span><span>Все права защищены.</span></div>
+  </footer>
+</div>
+
+<div class="mbar">
+  <a class="call" href="tel:+74994993108"><svg style="color:var(--red)"><use href="#i-phone"/></svg>Позвонить</a>
+  <a class="order" href="#menu"><svg><use href="#i-cart"/></svg>Заказать</a>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const MENU = {
+  pizza: [
+    {name:'Пицца "Маргарита"', desc:'Классика, которая всегда в удовольствие.', size:'30 см', price:490, img:'assets_v2/pizza_margarita.webp'},
+    {name:'Пицца "Пепперони"', desc:'Яркий вкус с ароматной пепперони.', size:'30 см', price:720, img:'assets_v2/pizza_pepperoni.webp'},
+    {name:'Пицца "Мясная"', desc:'Сытная и насыщенная мясными вкусами.', size:'30 см', price:870, img:'assets_v2/pizza_meat.webp'},
+    {name:'Пицца "4 сыра"', desc:'Нежное сочетание четырёх сыров.', size:'30 см', price:760, img:'assets_v2/pizza_4cheese.webp'}
+  ],
+  roman: [], snacks: [], drinks: []
+};
+const TAB_NAMES = {roman:'Римская пицца', snacks:'Закуски', drinks:'Напитки'};
+const grid = document.getElementById('grid');
+const fmt = n => n.toLocaleString('ru-RU') + ' ₽';
+
+function render(cat){
+  const items = MENU[cat];
+  if (!items.length){
+    grid.innerHTML = `<div class="empty"><b>${TAB_NAMES[cat]}</b>Раздел наполняется – скоро здесь появятся позиции.</div>`;
+    return;
+  }
+  grid.innerHTML = items.map((p,i) => `
+    <article class="card">
+      <img class="card-img" src="${p.img}" alt="${p.name.replace(/"/g,'')}" width="720" height="720" loading="lazy">
+      <h3>${p.name}</h3>
+      <p>${p.desc}</p>
+      <div class="size">${p.size}</div>
+      <div class="buy"><div class="price">${fmt(p.price)}</div><button class="pick" type="button" data-i="${i}" data-cat="${cat}">Выбрать</button></div>
+    </article>`).join('');
+}
+render('pizza');
+
+document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+  document.querySelectorAll('.tab').forEach(x => { x.classList.toggle('on', x === t); x.setAttribute('aria-selected', x === t); });
+  render(t.dataset.cat);
+}));
+
+let count = 0, sum = 0, toastTimer;
+const cartBtn = document.getElementById('cartBtn'), cartCount = document.getElementById('cartCount'), toast = document.getElementById('toast');
+function showToast(text){
+  toast.textContent = text; toast.classList.add('show');
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+}
+grid.addEventListener('click', e => {
+  const b = e.target.closest('.pick'); if (!b) return;
+  const p = MENU[b.dataset.cat][b.dataset.i];
+  count++; sum += p.price; cartCount.textContent = count;
+  cartBtn.classList.add('bump'); setTimeout(() => cartBtn.classList.remove('bump'), 200);
+  b.classList.add('added'); b.textContent = 'В корзине';
+  setTimeout(() => { b.classList.remove('added'); b.textContent = 'Выбрать'; }, 1400);
+  showToast(`${p.name.replace(/"/g,'«').replace(/«([^«]*)«/,'«$1»')} в корзине`);
+});
+cartBtn.addEventListener('click', () => showToast(count ? `В корзине ${count} шт. на ${fmt(sum)}` : 'Корзина пока пуста'));
+
+document.getElementById('checkForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const v = document.getElementById('addr').value.trim(), res = document.getElementById('res');
+  if (v.length < 3){ res.className = 'res bad'; res.textContent = 'Введите улицу и номер дома'; return; }
+  res.className = 'res'; res.textContent = 'Доставляем! Привезём горячей примерно за 50 минут.';
+});
+</script>
+</body>
+</html>
