@@ -1,4 +1,4 @@
-/* nestudio.site v2 — page behaviour (no build step, no dependencies) */
+/* nestudio.site v2 – page behaviour (no build step, no dependencies) */
 (() => {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -11,7 +11,7 @@
   const V = 'assets/video/';
   const WORKS = [
     { id: 'geely', file: 'geelyv', cat: 'video', shape: 'v', title: 'Geely EX5 · 7 000 км до Еревана', titleEn: 'Geely EX5 · 7,000 km to Yerevan', tag: { ru: 'Спецпроект', en: 'Special project' }, meta: '9:16 · 85 s',
-      task: { ru: 'Показать, что электромобиль проходит Минск — Ереван без поломок, и сделать это интересно для соцсетей.', en: 'Show that an EV drives Minsk to Yerevan without a single breakdown, and make it watchable on social.' },
+      task: { ru: 'Показать, что электромобиль проходит Минск – Ереван без поломок, и сделать это интересно для соцсетей.', en: 'Show that an EV drives Minsk to Yerevan without a single breakdown, and make it watchable on social.' },
       how: { ru: 'Сценарий по реальному автотрипу, AI-сцены дорог и гор, юмор вместо списка характеристик. Вертикаль для Reels и TikTok, триптих 16:9 для YouTube.', en: 'Script based on a real road trip, AI scenes of roads and mountains, humour instead of a spec sheet. Vertical cut for Reels and TikTok, a 16:9 triptych for YouTube.' } },
     { id: 'belinvest', cat: 'video', shape: 'v', title: 'Белинвестбанк · «Первый день»', titleEn: 'Belinvestbank · "First day"', tag: { ru: 'Банк · тендер', en: 'Bank · tender' }, meta: '9:16 · 37 s',
       task: { ru: 'HR-ролики для департамента развития персонала: показать кандидату, кем, с кем и над чем он будет работать.', en: 'HR films for the staff development department: show a candidate who they will work as, with whom and on what.' },
@@ -39,7 +39,7 @@
       how: { ru: 'Сквозной образ камня, который помнит всё, тёплый закатный свет, аэропанорамы реки и храмов, герб района в финале.', en: 'The stone that remembers everything as the through-line, warm sunset light, aerial views of the river and churches, the district crest at the end.' } },
     { id: 'priroda', cat: 'video', shape: 'h', title: 'Мингорприроды · «Знай их в лицо»', titleEn: 'Minsk Nature Committee · "Know them by sight"', tag: { ru: 'Социальный ролик · тендер', en: 'Public service film · tender' }, meta: '16:9 · 40 s',
       task: { ru: 'Социальный эко-ролик для Минского городского комитета природных ресурсов: научить горожан узнавать инвазивные растения.', en: 'A public service film for the Minsk city nature committee: teach residents to recognise invasive plants.' },
-      how: { ru: '3D-растения на постаментах, инфографика, анимированные сцены и памятка «Узнал — сообщи!» с телефоном горячей линии.', en: '3D plants on plinths, infographics, animated scenes and a "Spotted it? Report it!" card with the hotline number.' } },
+      how: { ru: '3D-растения на постаментах, инфографика, анимированные сцены и памятка «Узнал – сообщи!» с телефоном горячей линии.', en: '3D plants on plinths, infographics, animated scenes and a "Spotted it? Report it!" card with the hotline number.' } },
     { id: 'electroport', cat: 'web', shape: 'h', img: 'assets/img/electroport.jpg', title: 'electroport.by', tag: { ru: 'Сайт под ключ', en: 'Turnkey website' }, meta: 'web · 2026', letter: 'electroport', url: 'https://electroport.by',
       task: { ru: 'Корпоративный сайт подрядчика по зарядной инфраструктуре для электромобилей.', en: 'Corporate website for an EV charging infrastructure contractor.' },
       how: { ru: 'Структура под B2B-заявки, калькулятор сметы, объекты, аттестаты, адаптив и SEO.', en: 'B2B lead structure, estimate calculator, projects, certificates, mobile and SEO.' },
@@ -90,7 +90,7 @@
   const list = $('#wlist'), prev = $('#wprev');
   const mockHTML = (kind) => kind === 'chat'
     ? `<div class="mock mock--chat" aria-hidden="true"><div class="bubble bubble--me">Подготовь КП для Электропорта и отправь на почту</div><div class="bubble bubble--bot">Готово: КП_Электропорт.pdf, 4 страницы. Отправил на info@… и продублировал в Telegram.</div><div class="bubble bubble--me">Что с тендером в Гродно?</div><div class="bubble bubble--bot">Пакет собран, срок подачи завтра до 24:00. Напомню в 10:00.</div></div>`
-    : `<div class="mock" aria-hidden="true"><div class="mock__row mock__head"><span>track / author</span><span>dsp report</span><span>match</span></div><div class="mock__row"><span>Bely Sneg — Gravitation</span><span>yandex_2026_09.csv</span><span class="ok">0.98</span></div><div class="mock__row"><span>Razbitye zerkala (live)</span><span>vk_music_q3.xlsx</span><span class="ok">0.95</span></div><div class="mock__row"><span>Disco 85 — remix</span><span>zvuk_09.csv</span><span class="wait">0.71</span></div><div class="mock__row"><span>Kolyada lullaby</span><span>apple_09.tsv</span><span class="ok">1.00</span></div><div class="mock__row"><span>Man on a Mission</span><span>spotify_10.csv</span><span class="ok">0.99</span></div><div class="mock__row"><span>4 812 rows · 3 min 12 s</span><span>auto-matched 96.4%</span><span class="ok">done</span></div></div>`;
+    : `<div class="mock" aria-hidden="true"><div class="mock__row mock__head"><span>track / author</span><span>dsp report</span><span>match</span></div><div class="mock__row"><span>Bely Sneg – Gravitation</span><span>yandex_2026_09.csv</span><span class="ok">0.98</span></div><div class="mock__row"><span>Razbitye zerkala (live)</span><span>vk_music_q3.xlsx</span><span class="ok">0.95</span></div><div class="mock__row"><span>Disco 85 – remix</span><span>zvuk_09.csv</span><span class="wait">0.71</span></div><div class="mock__row"><span>Kolyada lullaby</span><span>apple_09.tsv</span><span class="ok">1.00</span></div><div class="mock__row"><span>Man on a Mission</span><span>spotify_10.csv</span><span class="ok">0.99</span></div><div class="mock__row"><span>4 812 rows · 3 min 12 s</span><span>auto-matched 96.4%</span><span class="ok">done</span></div></div>`;
   const thumb = (w) => w.img || (w.mock ? '' : `${V}${w.file || w.id}.jpg`);
 
   function renderWorks() {

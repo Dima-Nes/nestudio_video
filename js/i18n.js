@@ -81,7 +81,7 @@ window.I18N = (() => {
     'ft.about': 'AI-made commercials, websites and Telegram bots. Minsk, Belarus.', 'ft.sections': 'Sections', 'ft.contacts': 'Contact', 'ft.more': 'More', 'ft.portfolio': 'Portfolio nestudio.by', 'ft.legal': 'Company details on request'
   };
   const ru = new Map(), ruPh = new Map();
-  const TITLE = { ru: document.title, en: 'nestudio — AI-made commercials, websites and bots' };
+  const TITLE = { ru: document.title, en: 'nestudio – AI-made commercials, websites and bots' };
   function apply(lang) {
     document.querySelectorAll('[data-i18n]').forEach(el => {
       if (!ru.has(el)) ru.set(el, el.innerHTML);
